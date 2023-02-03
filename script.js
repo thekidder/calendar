@@ -1,5 +1,6 @@
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+
 function renderCalendar(d) {
     try {
         document.querySelector("#cal").innerHTML = "";
@@ -43,4 +44,4 @@ document.querySelector("#start").onchange = (e) => {
     renderCalendar(e.target.value);
 }
 
-renderCalendar("2021-01-01");
+renderCalendar(new Date());
