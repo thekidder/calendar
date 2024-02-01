@@ -8,6 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=work-sans:400,600,700" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
     <style>
       @media print {
@@ -32,23 +35,29 @@
 
       h1,
       h2 {
+        font-family: "Merriweather";
         font-weight: 700;
-        font-size: 4em;
+        font-size: 3.5em;
         text-align: right;
+        margin-top: 0;
+        margin-bottom: 0.4em;
       }
 
       h2 {
-        font-size: 2em;
-        font-weight: 400;
+        display: none;
       }
 
       main {
-        width: 100%;
-        max-width: 80em;
-        min-height: 100vh;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        margin: 0 auto;
+        margin-right: 2em;
+        margin-left: 2em;
+      }
+
+      #cal {
+        position: absolute;
+        top: 6.5em;
+        left: 2.5em;
+        right: 2.5em;
         margin: 0 auto;
       }
 
@@ -57,7 +66,7 @@
         width: 14.28%;
         display: inline-block;
         text-align: center;
-        font-weight: 600;
+        color: #d3c4c4;
       }
 
       #cal .day {
@@ -67,8 +76,13 @@
         display: inline-block;
         border-left: 1px solid #343a40;
         border-top: 1px solid #343a40;
-        height: 7em;
+        height: 7.75em;
         text-align: right;
+        font-weight: 600;
+      }
+
+      .tall {
+        height: 6.5em !important;
       }
 
       #cal .day:nth-child(7n) {
@@ -77,6 +91,21 @@
 
       #cal .last-week {
         border-bottom: 1px solid #343a40;
+      }
+      #cal .last-week:nth-child(7n) {
+        border-bottom-right-radius: 0.5em;
+      }
+      
+      #cal .last-week:nth-of-type(7n - 6) {
+        border-bottom-left-radius: 0.5em;
+      }
+
+      #cal .first-week:nth-child(7n) {
+        border-top-right-radius: 0.5em;
+      }
+      
+      #cal .first-week:nth-of-type(7n - 6) {
+        border-top-left-radius: 0.5em;
       }
     </style>
   </head>

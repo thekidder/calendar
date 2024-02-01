@@ -33,7 +33,17 @@ function renderCalendar(d) {
         let week = calendar[i];
         for (let day of week) {
             let el = document.createElement("div");
-            el.className = i == calendar.length - 1 ? "last-week day" : "day";
+            el.className = "day"
+            if (i == 0) {
+                el.className += " first-week"
+            } else if (i == calendar.length - 1) {
+                el.className += " last-week"
+            }
+
+            if (calendar.length == 6) {
+                el.className += " tall"
+            }
+
             el.innerHTML = day != 0 ? day : "&nbsp;";
             calendarEl.appendChild(el);
         }
